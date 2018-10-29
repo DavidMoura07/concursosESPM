@@ -18,14 +18,14 @@ export class Area {
   })
   areaid: number;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 250,
     name: 'nome',
   })
   nome: string | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 500,
     name: 'descricao',
@@ -40,7 +40,7 @@ export class Area {
   @JoinColumn({ name: 'concursoid' })
   concurso: Concurso | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'ocultarcandidato',
   })

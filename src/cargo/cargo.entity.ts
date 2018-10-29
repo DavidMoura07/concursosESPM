@@ -14,21 +14,21 @@ export class Cargo {
   @JoinColumn({ name: 'areaid' })
   area: Area | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 2000,
     name: 'nome',
   })
   nome: string | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 500,
     name: 'descricao',
   })
   descricao: string | null;
 
-  @Column('numeric', {
+  @Column('decimal', {
     nullable: true,
     precision: 8,
     scale: 2,
@@ -36,7 +36,7 @@ export class Cargo {
   })
   pontuacaomaxtitulo: string | null;
 
-  @Column('numeric', {
+  @Column('decimal', {
     nullable: true,
     precision: 8,
     scale: 2,
@@ -44,7 +44,7 @@ export class Cargo {
   })
   pontuacaomaxexperiencia: string | null;
 
-  @Column('numeric', {
+  @Column('decimal', {
     nullable: true,
     precision: 8,
     scale: 2,
@@ -52,14 +52,14 @@ export class Cargo {
   })
   pontuacaomaxexperienciaimportada: string | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 1000,
     name: 'textopontuacaoimportada',
   })
   textopontuacaoimportada: string | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 1000,
     name: 'textopontuacaoassiduidade',

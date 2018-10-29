@@ -11,57 +11,57 @@ export class Concurso {
   })
   concursoid: number;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 250,
     name: 'nome',
   })
   nome: string | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 1500,
     name: 'descricao',
   })
   descricao: string | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datainiciodivulgacao',
   })
   datainiciodivulgacao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datafimdivulgacao',
   })
   datafimdivulgacao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datainicioinscricao',
   })
   datainicioinscricao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datafiminscricao',
   })
   datafiminscricao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'horainicioinscricao',
   })
   horainicioinscricao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'horafiminscricao',
   })
   horafiminscricao: Date | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'liberarvisualizacao',
   })
@@ -91,19 +91,19 @@ export class Concurso {
   })
   interesse: number | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'resultadopublicado',
   })
   resultadopublicado: boolean | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datafimvigencia',
   })
   datafimvigencia: Date | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'experienciasiahres',
   })
@@ -115,13 +115,13 @@ export class Concurso {
   })
   subempresa: number | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datainiciosiahres',
   })
   datainiciosiahres: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datafimsiahres',
   })
@@ -143,68 +143,68 @@ export class Concurso {
   })
   pontuacaonaotecnica: string | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 11,
     name: 'telefonecontato',
   })
   telefonecontato: string | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'ocultarpontuacao',
   })
   ocultarpontuacao: boolean | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'etapaprova',
   })
   etapaprova: boolean | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datainicioisencao',
   })
   datainicioisencao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datafimisencao',
   })
   datafimisencao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'horainicioisencao',
   })
   horainicioisencao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'horafimisencao',
   })
   horafimisencao: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datainiciocancelamento',
   })
   datainiciocancelamento: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'datafimcancelamento',
   })
   datafimcancelamento: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'horainiciocancelamento',
   })
   horainiciocancelamento: Date | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'horafimcancelamento',
   })
@@ -216,32 +216,32 @@ export class Concurso {
   })
   mensagemcancelamento: string | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'selecaoefetivo',
   })
   selecaoefetivo: boolean | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 100,
     name: 'emailcontato',
   })
   emailcontato: string | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'ocultarquestionamento',
   })
   ocultarquestionamento: boolean | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'liberarclassificacao',
   })
   liberarclassificacao: boolean | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'liberarexclusaoinscricao',
   })

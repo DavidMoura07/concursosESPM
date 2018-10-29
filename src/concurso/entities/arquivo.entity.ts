@@ -10,21 +10,21 @@ export class Arquivo {
   })
   arquivoid: number;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 400,
     name: 'nomearquivo',
   })
   nomearquivo: string | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 100,
     name: 'content_type',
   })
   content_type: string | null;
 
-  @Column('timestamp without time zone', {
+  @Column('datetime', {
     nullable: true,
     name: 'dataupload',
   })
@@ -34,13 +34,13 @@ export class Arquivo {
   @JoinColumn({ name: 'concursoid' })
   concurso: Concurso | null;
 
-  @Column('boolean', {
+  @Column('tinyint', {
     nullable: true,
     name: 'exibir',
   })
   exibir: boolean | null;
 
-  @Column('character varying', {
+  @Column('varchar', {
     nullable: true,
     length: 5,
     name: 'extensao',
