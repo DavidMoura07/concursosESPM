@@ -63,7 +63,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",gs --tai
+    "rootDir": "src",
     "testRegex": ".spec.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
