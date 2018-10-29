@@ -19,7 +19,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "webpack": "webpack --config webpack.config.js",
     "start:tsc": "tsc && node dist/main.js",
-    "sonar:prodest": "sonar-scanner -Dsonar.projectKey=empregabilidade -Dsonar.sources=. -Dsonar.host.url=http://sonar.10.243.9.12.xip.io -Dsonar.login=3f2472fdc8e3df31f4425c6149b0b15c1c663f36"
+    "sonar:prodest": "sonar-scanner -Dsonar.projectKey=empregabilidade -Dsonar.sources=. -Dsonar.host.url=http://sonar.10.243.9.12.xip.io -Dsonar.login=3f2472fdc8e3df31f4425c6149b0b15c1c663f36",
+    "start:heroku": "node dist/main.js",
+    "heroku:postbuild": "npm run prestart:prod"
   },
   "dependencies": {
     "@nestjs/common": "^5.1.0",
@@ -61,7 +63,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": "src",gs --tai
     "testRegex": ".spec.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
