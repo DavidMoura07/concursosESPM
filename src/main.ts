@@ -4,7 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   const options = new DocumentBuilder()
     .setTitle('API Concursos ES')
     .setDescription('Manual api-concursos')
@@ -12,9 +12,10 @@ async function bootstrap() {
     .addTag('concursos')
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  
-  SwaggerModule.setup('/', app, document);
 
-  await app.listen(3000);
+  SwaggerModule.setup('/doc', app, document);
+
+  // tslint:disable-next-line:radix
+  await app.listen(parseInt(process.env.PORT) || 3000);
 }
 bootstrap();
