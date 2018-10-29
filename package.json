@@ -20,7 +20,7 @@
     "webpack": "webpack --config webpack.config.js",
     "start:tsc": "tsc && node dist/main.js",
     "sonar:prodest": "sonar-scanner -Dsonar.projectKey=empregabilidade -Dsonar.sources=. -Dsonar.host.url=http://sonar.10.243.9.12.xip.io -Dsonar.login=3f2472fdc8e3df31f4425c6149b0b15c1c663f36",
-    "start:heroku": "node dist/main.js",
+    "start:heroku": "node ./index.js",
     "heroku:postbuild": "npm run prestart:prod"
   },
   "dependencies": {
