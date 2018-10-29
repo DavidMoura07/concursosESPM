@@ -1,0 +1,46 @@
+stages:
+  - test
+  - quality
+  - build
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+test_job:
+  image: node:8.11.2
+  stage: test
+  script:
+    - npm install
+    - npm run test
+    - npm run test:e2e
+
+quality_job:
+  image: node:8.11.2
+  stage: quality
+  services:
+    - primetoninc/jdk:1.7
+  dependencies:
+    - test_job
+  script:
+    - test -d "sonar-scanner-cli-3.2.0.1227-linux.zip" && echo "usando cache" || ( apt-get update && apt-get install unzip && wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip )
+    - npm install
+    - npm run test:cov
+    - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+    - ./sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner
+
+build_job:
+  stage: build
+  image: docker:stable
+
+  services:
+    - docker:dind
+  only:
+    - tags
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_TAG .
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_TAG
+    - docker tag $CI_REGISTRY_IMAGE:$CI_BUILD_TAG $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:latest
