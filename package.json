@@ -32,7 +32,7 @@
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.2.2",
     "swagger": "^0.7.5",
-    "typeorm": "^0.2.8",
+    "typeorm": "^0.2.25",
     "typeorm-model-generator": "^0.2.22",
     "typescript": "^3.0.1"
   },
